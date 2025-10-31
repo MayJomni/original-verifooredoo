@@ -1,21 +1,17 @@
 {
-  "name": "verifooredoo-backend",
+  "name": "verifooredoo-fullstack",
   "version": "1.0.0",
-  "description": "Backend for VerifOoredoo",
-  "main": "server.js",
+  "description": "VerifOoredoo Fullstack Application",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.0.0",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-server": "cd backend && npm install",
+    "install-client": "cd frontend && npm install",
+    "install-all": "npm run install-server && npm run install-client"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "concurrently": "^7.6.0"
   }
 }
